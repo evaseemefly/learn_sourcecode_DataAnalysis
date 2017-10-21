@@ -256,9 +256,6 @@ print(list(result))
 
 # ## 7. 列表推导式
 
-# In[91]:
-
-
 print('找出1000内的偶数(for循环)：')
 l1 = []
 for i in range(1000):
@@ -266,40 +263,32 @@ for i in range(1000):
         l1.append(i)
 print(l1)
 
-
-# In[92]:
-
-
 print('找出1000内的偶数(列表推导式)：')
+# 注意列表推导式需要加方括号
+# exp for x in list if contdition
 l2 = [i for i in range(1000) if i % 2 == 0]
 print(l2)
 
 
 # ## 8. Python操作CSV数据文件
-
-# In[9]:
-
-
 import csv
-
+import os
+# 此处有问题！！！
 with open('grades.csv') as csvfile:
+    # 通过csv.DictReader的方式读取打开后的文件
     grades_data = list(csv.DictReader(csvfile))
     
 print('记录个数：', len(grades_data))
 print('前2条记录：', grades_data[:2])
 print('列名：', list(grades_data[0].keys()))
 
-
-# In[10]:
-
-
+'''
+取出所有的assignment1_grade的行数据，转成float类型并求和，最后除总行数
+'''
 avg_assign1 = sum(float(row['assignment1_grade']) for row in grades_data) / len(grades_data) 
 print('assignment1平均分数：', avg_assign1)
 
-
-# In[13]:
-
-
+# set是集合，不能重复，且是无序的，使用下面这种方式由于通过列表推导式取出的数据中有重复数据，所以使用set()的方式转换后会自动去重
 assign1_sub_month = set(row['assignment1_submission'][:7] for row in grades_data)
 print(assign1_sub_month)
 
