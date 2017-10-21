@@ -108,13 +108,18 @@ print(p5)
 # In[34]:
 
 
-a = np.array([-4, -2, 1, 3, 5])
+a = np.array([-4, -2, 1, 3, 5,7])
+b=a.reshape(3,2)
+print(a)
+print(b)
 print('sum: ', a.sum())
+print('b sum',b.sum())
 print('min: ', a.min())
 print('max: ', a.max())
 print('mean: ', a.mean())
 print('std: ', a.std())
 print('argmax: ', a.argmax())
+print('b argmax',b.argmax())
 print('argmin: ', a.argmin())
 
 
