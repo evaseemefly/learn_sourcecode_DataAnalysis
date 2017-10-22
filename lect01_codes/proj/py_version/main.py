@@ -15,6 +15,7 @@
 
 import csv
 import os
+
 import numpy as np
 import pandas as pd
 
@@ -29,6 +30,8 @@ def load_data(data_file):
         读取数据文件，加载数据。
         返回列表，其中列表中的每个元素为一个元组，包括Country, Region, Happiness Rank和Happiness Score
     """
+    # 是list类型
+    # 集合类型
     data = []
     with open(data_file, 'r') as csvfile:
         data_reader = csv.DictReader(csvfile)
@@ -45,9 +48,13 @@ def get_region_happiness_scores(report_data):
         获取区域包含国家的幸福指数
     """
     region_score_dict = {}
+    # item：('Switzerland', 'Western Europe', '1', '7.587')
     for item in report_data:
+        # 取出区域
         region = item[1]
+        #取出分数
         score = float(item[3])
+        # 创建一个区域幸福指数的字典
         if region in region_score_dict:
             # 如果region_score_dict已经记录了该区域，则添加该区域的幸福指数到列表中
             region_score_dict[region].append(score)
@@ -75,6 +82,7 @@ def main():
     # 任务1. 查看幸福指数分布情况
     print('\n===================== 任务1. 查看幸福指数分布情况 =====================')
     # 注意列表推导式的使用
+    # 取出Happiness Score并转换为float类型的列表
     happiness_2015_scores = [float(item[3]) for item in report_2015_data]
     happiness_2016_scores = [float(item[3]) for item in report_2016_data]
 
@@ -83,6 +91,7 @@ def main():
     print('2016年报告，前10条记录幸福指数：', happiness_2016_scores[:10])
 
     # 使用numpy.histogram查看数据的直方图分布
+    # 返回的两个分别是干什么用的？
     hist_2015, hist_edge_2015 = np.histogram(happiness_2015_scores)
     hist_2016, hist_edge_2016 = np.histogram(happiness_2016_scores)
 
@@ -91,6 +100,11 @@ def main():
 
     # 任务2. 统计分析区域的幸福指数
     print('\n===================== 任务2. 统计分析区域的幸福指数 =====================')
+    '''
+    dict
+    key :区域名称
+    value:幸福指数集合
+    '''
     region_2015_score_dict = get_region_happiness_scores(report_2015_data)
     region_2016_score_dict = get_region_happiness_scores(report_2015_data)
 
