@@ -2,11 +2,9 @@
 # coding: utf-8
 
 # # 科学计算库NumPy
-
+import numpy as np
 # In[1]:
 
-
-import numpy as np
 
 
 # ## 1. 创建Array
@@ -19,6 +17,7 @@ x = np.array(my_list)
 
 print('列表：', my_list)
 print('Array: ', x)
+print(x.shape,x.dtype)
 
 
 # In[6]:
