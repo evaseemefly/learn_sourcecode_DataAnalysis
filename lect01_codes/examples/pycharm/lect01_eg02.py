@@ -3,15 +3,7 @@
 
 # # 科学计算库NumPy
 import numpy as np
-# In[1]:
-
-
-
 # ## 1. 创建Array
-
-# In[4]:
-
-
 my_list = [1, 2, 3]
 x = np.array(my_list)
 
