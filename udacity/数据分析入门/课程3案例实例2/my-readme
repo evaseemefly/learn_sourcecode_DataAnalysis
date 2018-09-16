@@ -1,0 +1,23 @@
+燃料经济性数据
+
+该信息由美国环境保护局、流动源办公室、美国国家车辆与燃料排放实验室提供。
+属性 	描述
+Model 	车辆品牌和型号
+Displ 	发动机排量 - 发动机的大小（升）
+Cyl 	特定发动机中的气缸数
+Trans 	传动类型和齿轮数
+Drive 	驱动轴类型（2WD = 2 轮驱动，4WD = 4 轮/全轮驱动）
+Fuel 	燃油类型
+Cert Region* 	认证区域代码
+Sales Area** 	认证区域代码
+Stnd 	车辆排放标准代码（在此查看车辆排放标准）
+Stnd Description* 	车辆排放标准说明
+Underhood ID 	这是一个 12 位数的识别号码，可以在发动机舱排放标签上找到。EPA 要求使用此号码指定其"测定组"或"发动机系列"。
+Veh Class 	EPA 车辆类型
+Air Pollution Score 	空气污染评分（烟雾等级）
+City MPG 	估计的城市 mpg（英里/加仑）
+Hwy MPG 	估计的高速公路 mpg（英里/加仑）
+Cmb MPG 	估计的综合 mpg（英里/加仑）
+Greenhouse Gas Score 	温室气体等级
+SmartWay 	是、否或 Elite
+Comb CO2* 	城市/高速公路综合二氧化碳尾气排放量（以克/英里为单位）
